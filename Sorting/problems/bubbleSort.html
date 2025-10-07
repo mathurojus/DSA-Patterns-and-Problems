@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Sort - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Sorting.html">Sorting</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Bubble Sort</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Bubble Sort</h1>
+
+    <section class="problem-section">
+      <h2>Algorithm Explanation</h2>
+      <p>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller or larger elements "bubble" to the top of the list.</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Pseudocode</h2>
+      <pre class="pseudo-code">
+function bubbleSort(array):
+  n = length(array)
+  for i from 0 to n-1:
+    swapped = false
+    for j from 0 to n-i-2:
+      if array[j] > array[j+1]:
+        swap(array[j], array[j+1])
+        swapped = true
+    if swapped == false:
+      break // Array is already sorted
+      </pre>
+    </section>
+    
+    <section class="approach-section">
+      <h2>Complexity & Properties</h2>
+      <ul>
+        <li><strong>Time Complexity:</strong> O(n²) in the worst and average case. O(n) in the best case (if the array is already sorted).</li>
+        <li><strong>Space Complexity:</strong> O(1) as it's an in-place sort.</li>
+        <li><strong>Stable:</strong> Yes, it maintains the relative order of equal elements.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

@@ -16,3 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
 });
+
+const toggleBtn = document.getElementById('toggleBtn');
+  const flowchart = document.getElementById('flowchart');
+
+  toggleBtn.addEventListener('click', () => {
+    flowchart.classList.toggle('active');
+    toggleBtn.textContent = flowchart.classList.contains('active')
+      ? 'Hide Flowchart ▼'
+      : 'Show Flowchart ▲';
+  });

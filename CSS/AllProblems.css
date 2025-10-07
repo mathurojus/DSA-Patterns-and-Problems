@@ -25,6 +25,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between logo and text */
+}
+
+.logo-img img {
+  height: 50px;
+  width: 50px;
+}
 .navbar .nav-links {
   list-style: none;
   display: flex;
@@ -203,4 +213,297 @@ h2 {
   margin: 0px auto 40px auto;
   border-radius: 8px; /* optional, makes corners slightly rounded */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional, subtle shadow */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.dark-mode-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.dark-mode-btn.active {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+}
+
+body.dark-mode main {
+  background: transparent;
+}
+
+body.dark-mode main h1 {
+  color: #bb86fc;
+  text-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+}
+
+body.dark-mode main h1::after {
+  background: linear-gradient(90deg, #bb86fc, #cf6679, #03dac6, #bb86fc);
+  background-size: 300% 100%;
+}
+
+/* Dark Mode Navbar */
+body.dark-mode .navbar {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 4px 20px rgba(106, 17, 203, 0.4);
+}
+
+body.dark-mode .navbar .nav-links li a {
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  background-size: 200% 100%;
+}
+
+body.dark-mode .navbar .nav-links li a:hover {
+  background: linear-gradient(90deg, #764ba2, #667eea, #764ba2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Dark Mode Cards */
+body.dark-mode .card {
+  background: linear-gradient(145deg, #2d2d44, #1f1f33);
+  color: #e0e0e0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+body.dark-mode .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(187, 134, 252, 0.4);
+  border-color: rgba(187, 134, 252, 0.5);
+}
+
+body.dark-mode .card h3 {
+  color: #bb86fc;
+}
+
+body.dark-mode .card p {
+  color: #b0b0b0;
+}
+
+/* Dark Mode Footer */
+body.dark-mode footer {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 -4px 20px rgba(106, 17, 203, 0.3);
+}
+
+/* Dark Mode Recently Viewed Sidebar */
+body.dark-mode .recently-viewed-sidebar {
+  background-color: #2d2d44;
+  border: 1px solid rgba(187, 134, 252, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .recently-viewed-sidebar h2 {
+  color: #bb86fc;
+}
+
+body.dark-mode .recently-viewed-sidebar:hover h2 {
+  border-bottom-color: #bb86fc;
+}
+
+body.dark-mode #recently-viewed-list a {
+  color: #03dac6;
+}
+
+body.dark-mode #recently-viewed-list a:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode #clear-history-btn {
+  border-color: #cf6679;
+  color: #cf6679;
+}
+
+body.dark-mode #clear-history-btn:hover {
+  background-color: #cf6679;
+  color: white;
+}
+
+/* Dark Mode - Problem Statement Box */
+body.dark-mode .problem-statement,
+body.dark-mode .problem-box,
+body.dark-mode .approach-box,
+body.dark-mode .approach-section {
+  background-color: #2d2d44;
+  color: #e0e0e0;
+  border: 1px solid rgba(187, 134, 252, 0.3);
+}
+
+body.dark-mode .problem-statement h2,
+body.dark-mode .problem-statement h3,
+body.dark-mode .approach-box h2,
+body.dark-mode .approach-box h3 {
+  color: #bb86fc;
+}
+
+body.dark-mode .problem-statement p,
+body.dark-mode .approach-box p,
+body.dark-mode .explanation,
+body.dark-mode .time-complexity,
+body.dark-mode .space-complexity {
+  color: #b0b0b0;
+}
+
+/* Dark Mode - Code Blocks */
+body.dark-mode pre,
+body.dark-mode code {
+  background-color: #1a1a2e;
+  color: #03dac6;
+  border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+/* Dark Mode - Breadcrumb Navigation */
+body.dark-mode .breadcrumb,
+body.dark-mode .breadcrumb a {
+  color: #b0b0b0;
+}
+
+body.dark-mode .breadcrumb a:hover {
+  color: #bb86fc;
+}
+
+/* Dark Mode - Example text */
+body.dark-mode .example,
+body.dark-mode .example-text {
+  color: #e0e0e0;
+}
+
+/* Dark Mode - Highlighted text (like "structured learning path") */
+body.dark-mode strong,
+body.dark-mode b,
+body.dark-mode .highlight {
+  color: #cf6679;
+}
+
+/* Dark Mode - Lists */
+body.dark-mode ul li,
+body.dark-mode ol li {
+  color: #b0b0b0;
+}
+
+/* Dark Mode - Checkmark icons in features */
+body.dark-mode .features li::before,
+body.dark-mode .key-features li::before {
+  color: #03dac6;
+}
+/* Dark Mode - All content boxes */
+body.dark-mode .content-box,
+body.dark-mode .info-box,
+body.dark-mode .section-box {
+  background-color: #2d2d44;
+  color: #e0e0e0;
+  border-color: rgba(187, 134, 252, 0.3);
+}
+
+/* Dark Mode - Input/Output examples */
+body.dark-mode .input-output,
+body.dark-mode .example-input,
+body.dark-mode .example-output {
+  background-color: #1f1f33;
+  color: #e0e0e0;
+  border-left: 3px solid #bb86fc;
+}
+/* Dark Mode - About Page Content */
+body.dark-mode .about-container,
+body.dark-mode .about-content {
+  background-color: rgba(45, 45, 68, 0.6);
+  color: #e0e0e0;
+}
+
+body.dark-mode .about-content h1,
+body.dark-mode .about-content h2 {
+  color: #bb86fc;
+}
+
+body.dark-mode .about-content p {
+  color: #b0b0b0;
+}
+
+/* Dark Mode - Feature boxes with checkmarks */
+body.dark-mode .feature-item {
+  background-color: rgba(45, 45, 68, 0.4);
+  color: #e0e0e0;
+}
+
+
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+body.dark-mode .problem-container {
+  color: #e0e0e0;
+}
+
+
+/* Dark Mode - Problem Statement box text color fix only */
+body.dark-mode .problem-statement p,
+body.dark-mode .problem-statement span,
+body.dark-mode .problem-statement li {
+  color: #000 !important;
+}
+
+body.dark-mode .problem-statement h2 {
+  color: #0056b3 !important;
+}
+
+body.dark-mode .problem-statement strong,
+body.dark-mode .problem-statement .example {
+  color: #d32f2f !important;
+}
+/* Dark Mode - Problem Section (correct class name) */
+body.dark-mode .problem-section {
+  background-color: #f0f8ff;  /* keep white background */
+  color: #000;  /* black text */
+}
+
+body.dark-mode .problem-section h2 {
+  color: #0b3d91 !important;  /* keep original blue */
+}
+
+body.dark-mode .problem-section p,
+body.dark-mode .problem-section span,
+body.dark-mode .problem-section li {
+  color: #000 !important;  /* black text */
+}
+
+body.dark-mode .problem-section strong {
+  color: #d32f2f !important;  /* red for emphasis */
+}
+.flowchart-container {
+  display: none;
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+}
+.flowchart-container.active {
+  display: block;
+}
+.toggle-btn {
+  background: linear-gradient(90deg, #f5c686, #ffcc70, #ffd9a6);
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }

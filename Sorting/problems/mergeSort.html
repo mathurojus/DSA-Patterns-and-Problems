@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merge Sort - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Sorting.html">Sorting</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Merge Sort</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Merge Sort</h1>
+
+    <section class="problem-section">
+      <h2>Algorithm Explanation</h2>
+      <p>Merge Sort is an efficient, comparison-based, divide and conquer sorting algorithm. It works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array. The merging process is the key step, where two sorted subarrays are combined into a single sorted array.</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Pseudocode</h2>
+      <pre class="pseudo-code">
+function mergeSort(array):
+  if length(array) <= 1:
+    return array
+
+  mid = length(array) / 2
+  leftHalf = mergeSort(array from 0 to mid)
+  rightHalf = mergeSort(array from mid to end)
+
+  return merge(leftHalf, rightHalf)
+
+function merge(left, right):
+  result = []
+  while left is not empty and right is not empty:
+    if left[0] <= right[0]:
+      append left[0] to result
+      remove first element from left
+    else:
+      append right[0] to result
+      remove first element from right
+  
+  append any remaining elements from left or right to result
+  return result
+      </pre>
+    </section>
+    
+    <section class="approach-section">
+      <h2>Complexity & Properties</h2>
+      <ul>
+        <li><strong>Time Complexity:</strong> O(n log n) in all cases (best, average, and worst).</li>
+        <li><strong>Space Complexity:</strong> O(n) as it requires auxiliary space for merging.</li>
+        <li><strong>Stable:</strong> Yes, it is a stable sort.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

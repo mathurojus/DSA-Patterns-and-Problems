@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeDSA Graphs</title>
+    <link rel="stylesheet" href="../CSS/breadcrumb.css">   
     <link rel="stylesheet" href="../CSS/AllTopics.css" />
     <link rel="stylesheet" href="../CSS/snake.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo">CodeDSA</div>
+       <div class="logo-container">
+  <div class="logo-img">
+    <img src="../images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+</div>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
@@ -20,100 +26,105 @@
         <button id="snakeToggle" class="snake-btn">
           <span style="margin-left: 20px">Snake Cursor</span>
         </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
       </div>
-    </nav>
+    </nav>   
+<div class="breadcrumb-container">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+    <li class="breadcrumb-item active">Graphs</li>
+  </ul>
+</div>
 
-    <main>
-      <h1>Graph Topics</h1>
-      <p class="intro-text">
-        Master essential graph problems and patterns frequently asked in
-        interviews.
-      </p>
+  <main>
+    <h1>Graph Topics</h1>
+    <p class="intro-text">Master essential graph problems and patterns frequently asked in interviews.</p>
 
-      <ul class="topic-list">
+    <div id="topic-progress-bar">
+      <div id="topic-progress"></div>
+      <div id="topic-progress-text">Progress: 0 / 5 Topics</div>
+    </div>
+
+    <ul id="topics" class="topic-list" data-topic="graph">
+      <li>
         <a href="./Problems/bfsDFS.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">01</span>
           <span class="topic-name">BFS & DFS Traversals</span>
-          <span class="topic-desc"
-            >Basic graph traversal using BFS and DFS, both iterative &
-            recursive</span
-          >
+          <span class="topic-desc">Basic graph traversal using BFS and DFS, both iterative & recursive</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/connectedComponents.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">02</span>
           <span class="topic-name">Connected Components / Island Counting</span>
-          <span class="topic-desc"
-            >DFS/BFS pattern to count separate components in a graph or
-            grid</span
-          >
+          <span class="topic-desc">DFS/BFS pattern to count separate components in a graph or grid</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/topologicalSort.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">03</span>
           <span class="topic-name">Topological Sorting</span>
-          <span class="topic-desc"
-            >DFS or Kahn's algorithm for DAG ordering</span
-          >
+          <span class="topic-desc">DFS or Kahn's algorithm for DAG ordering</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/shortestPath.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">04</span>
           <span class="topic-name">Shortest Path (Dijkstra / BFS)</span>
-          <span class="topic-desc"
-            >Find shortest distances using BFS (unweighted) or Dijkstra
-            (weighted)</span
-          >
+          <span class="topic-desc">Find shortest distances using BFS (unweighted) or Dijkstra (weighted)</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/minSpanningTree.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">05</span>
           <span class="topic-name">Minimum Spanning Tree (MST)</span>
-          <span class="topic-desc"
-            >Kruskal's or Prim's algorithm for MST construction</span
-          >
+          <span class="topic-desc">Kruskal's or Prim's algorithm for MST construction</span>
         </a>
-      </ul>
+      </li>
 
-      <p class="pattern-coverage">
-        <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
-        These problems cover the most <em>important graph patterns</em> for
-        interviews: <br /><br />
+    </ul>
 
-        <span class="pattern-name">BFS & DFS Traversals</span> →
-        <span class="pattern-desc"
-          >Fundamental traversal patterns for graphs, trees, and grids.</span
-        ><br />
-        <span class="pattern-name">Connected Components / Island Counting</span>
-        →
-        <span class="pattern-desc"
-          >DFS/BFS flood fill pattern to explore separate components.</span
-        ><br />
-        <span class="pattern-name">Topological Sorting</span> →
-        <span class="pattern-desc"
-          >DFS post-order or queue-based ordering of DAG nodes.</span
-        ><br />
-        <span class="pattern-name">Shortest Path (Dijkstra / BFS)</span> →
-        <span class="pattern-desc"
-          >Single-source shortest path using BFS for unweighted or Dijkstra for
-          weighted graphs.</span
-        ><br />
-        <span class="pattern-name">Minimum Spanning Tree (MST)</span> →
-        <span class="pattern-desc"
-          >Greedy algorithms (Prim/Kruskal) to connect all nodes with minimum
-          cost.</span
-        ><br /><br />
+    <p class="pattern-coverage">
+      <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
+      These problems cover the most <em>important graph patterns</em> for
+      interviews: <br /><br />
 
-        Together, they ensure you understand
-        <span class="highlight"
-          >traversals, component counting, DAG ordering, shortest path finding,
-          and MST construction</span
-        >
-        in graph problems.
-      </p>
-    </main>
+      <span class="pattern-name">BFS & DFS Traversals</span> →
+      <span class="pattern-desc">Fundamental traversal patterns for graphs, trees, and grids.</span><br />
+      <span class="pattern-name">Connected Components / Island Counting</span>
+      →
+      <span class="pattern-desc">DFS/BFS flood fill pattern to explore separate components.</span><br />
+      <span class="pattern-name">Topological Sorting</span> →
+      <span class="pattern-desc">DFS post-order or queue-based ordering of DAG nodes.</span><br />
+      <span class="pattern-name">Shortest Path (Dijkstra / BFS)</span> →
+      <span class="pattern-desc">Single-source shortest path using BFS for unweighted or Dijkstra for
+        weighted graphs.</span><br />
+      <span class="pattern-name">Minimum Spanning Tree (MST)</span> →
+      <span class="pattern-desc">Greedy algorithms (Prim/Kruskal) to connect all nodes with minimum
+        cost.</span><br /><br />
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
-    </footer>
+      Together, they ensure you understand
+      <span class="highlight">traversals, component counting, DAG ordering, shortest path finding,
+        and MST construction</span>
+      in graph problems.
+    </p>
+  </main>
 
-    <script src="../index.js"></script>
-  </body>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+
 </html>

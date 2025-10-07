@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeDSA Sorting</title>
+    <link rel="stylesheet" href="../CSS/AllTopics.css" />
+    <link rel="stylesheet" href="../CSS/snake.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">CodeDSA</div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <button id="snakeToggle" class="snake-btn">
+          <span style="margin-left: 20px">Snake Cursor</span>
+        </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+      </div>
+    </nav>
+
+  <main>
+    <h1>Sorting Algorithms</h1>
+    <p class="intro-text">
+      Understand fundamental sorting algorithms, from simple to advanced, and their trade-offs.
+    </p>
+
+    <div id="topic-progress-bar">
+      <div id="topic-progress"></div>
+      <div id="topic-progress-text">Progress: 0 / 5 Topics</div>
+    </div>
+
+    <ul id="topics" class="topic-list" data-topic="sorting">
+      <li>
+        <a href="./Problems/bubbleSort.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">01</span>
+          <span class="topic-name">Bubble Sort</span>
+          <span class="topic-desc">A simple comparison-based sorting algorithm.</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/selectionSort.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">02</span>
+          <span class="topic-name">Selection Sort</span>
+          <span class="topic-desc">An in-place comparison sorting algorithm.</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/insertionSort.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">03</span>
+          <span class="topic-name">Insertion Sort</span>
+          <span class="topic-desc">Builds the final sorted array one item at a time.</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/mergeSort.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">04</span>
+          <span class="topic-name">Merge Sort</span>
+          <span class="topic-desc">An efficient, stable, divide-and-conquer sorting algorithm.</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/quickSort.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">05</span>
+          <span class="topic-name">Quick Sort</span>
+          <span class="topic-desc">An efficient in-place, divide-and-conquer sorting algorithm.</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="pattern-coverage">
+      <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
+      These algorithms cover two major sorting paradigms:
+      <br /><br />
+      <span class="pattern-name">Bubble, Selection & Insertion Sort</span> →
+      <span class="pattern-desc">Simple, quadratic time complexity (O(n²)) sorts. Good for understanding basics.</span><br />
+      <span class="pattern-name">Merge Sort & Quick Sort</span> →
+      <span class="pattern-desc">Efficient, log-linear time complexity (O(n log n)) sorts based on the Divide and Conquer pattern.</span><br /><br />
+      Together, they provide a strong foundation, contrasting simple brute-force methods with efficient recursive approaches.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>

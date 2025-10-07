@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combination Sum - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Backtracking.html">Backtracking</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Combination Sum</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Combination Sum</h1>
+
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>Given an array of distinct integers <strong>candidates</strong> and a target integer <strong>target</strong>, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times.</p>
+      <p><strong>Example:</strong> Input: candidates = [2,3,6,7], target = 7 → Output: [[2,2,3],[7]]</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 1: Brute-Force Backtracking</h2>
+      <p><strong>Explanation (Brute):</strong> A standard recursive backtracking approach. At each step, iterate through all candidates. If a candidate is less than or equal to the remaining target, add it to the current combination and recurse with the new target. Backtrack by removing the candidate to explore other possibilities.</p>
+      <p><strong>Time Complexity:</strong> O(N^(T/M + 1)), where N is number of candidates, T is target, M is min candidate value.</p>
+      <p><strong>Space Complexity:</strong> O(T/M) for recursion depth.</p>
+      <pre class="pseudo-code">
+function findCombinations(candidates, target):
+    result = []
+    backtrack(result, [], candidates, target, 0)
+    return result
+
+function backtrack(result, current, candidates, remain, start):
+    if remain < 0:
+        return
+    if remain == 0:
+        add copy of current to result
+        return
+    for i from start to length(candidates)-1:
+        current.push(candidates[i])
+        backtrack(result, current, candidates, remain - candidates[i], i) // 'i' allows reuse of same element
+        current.pop()
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 2: Backtracking with Pruning</h2>
+      <p><strong>Explanation (Better):</strong> The brute-force approach can be slightly optimized. By sorting the candidates array first, we can stop exploring a path as soon as the current candidate is greater than the remaining target. This prunes branches of the recursion tree that will not lead to a solution.</p>
+      <p><strong>Time Complexity:</strong> Similar to brute-force, but faster in practice due to pruning.</p>
+      <p><strong>Space Complexity:</strong> O(T/M).</p>
+      <pre class="pseudo-code">
+// Same as above, but with a check inside the loop:
+sort(candidates)
+...
+for i from start to length(candidates)-1:
+    if candidates[i] > remain:
+        break // Pruning step
+    current.push(candidates[i])
+    backtrack(...)
+    current.pop()
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 3: Dynamic Programming</h2>
+      <p><strong>Explanation (Optimal for related problems):</strong> While backtracking is needed to find *all* combinations, if the problem was to just count the number of combinations, Dynamic Programming would be more optimal. A DP array `dp[i]` could store the number of ways to make sum `i`. This approach is not directly applicable for listing all combinations but is a key alternative for similar problems.</p>
+      <p><strong>Time Complexity:</strong> O(N * T)</p>
+      <p><strong>Space Complexity:</strong> O(T)</p>
+      <pre class="pseudo-code">
+// For counting combinations
+dp = array of size (target + 1) filled with 0
+dp[0] = 1
+for candidate in candidates:
+    for j from candidate to target:
+        dp[j] = dp[j] + dp[j - candidate]
+return dp[target]
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

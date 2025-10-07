@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Good Numbers - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+  <div class="logo-img">
+    <img src="../../images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+</div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+      <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../MathProblems.html">Math Problems</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Count Good Numbers</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Count Good Numbers</h1>
+
+    <!-- Problem Statement -->
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>
+        A digit string is <strong>good</strong> if the digits (0-indexed) at even indices are even and the digits at odd indices are prime (2, 3, 5, or 7). Given an integer <strong>n</strong>, return the total number of good digit strings of length <strong>n</strong>. Since the answer may be large, return it modulo <strong>10^9 + 7</strong>.
+      </p>
+      <p>
+        <strong>Example:</strong> n = 4 → Output: 400 (e.g., "2582" is good: even indices [2,8] are even, odd indices [5,2] are prime)<br>
+        n = 1 → Output: 5 (only even digits 0,2,4,6,8 are valid)
+      </p>
+    </section>
+
+    <!-- Approach 1: Modular Exponentiation -->
+    <section class="approach-section">
+      <h2>Approach 1: Modular Exponentiation</h2>
+      <p>
+        <strong>Explanation:</strong> For even indices, there are 5 choices (0,2,4,6,8). For odd indices, there are 4 choices (2,3,5,7). Compute the number of good strings using fast exponentiation for 5^(even indices) * 4^(odd indices) modulo 10^9 + 7.
+      </p>
+      <p><strong>Time Complexity:</strong> O(log n)</p>
+      <p><strong>Space Complexity:</strong> O(1)</p>
+      <pre class="pseudo-code">
+mod = 10^9 + 7
+function findPow(a, b):
+    if b == 0:
+        return 1
+    half = findPow(a, b/2) % mod
+    result = (half * half) % mod
+    if b % 2 == 1:
+        result = (result * a) % mod
+    return result
+
+evens = (n+1)/2
+odds = n/2
+return (findPow(5, evens) * findPow(4, odds)) % mod
+      </pre>
+    </section>
+
+   
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+
+  <script src="../../index.js"></script>
+  <script src="../../JS/problemTracker.js"></script>
+</body>
+</html>

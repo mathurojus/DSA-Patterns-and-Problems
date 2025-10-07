@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subsets - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Backtracking.html">Backtracking</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Subsets (Power Set)</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Subsets (Power Set)</h1>
+
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>Given an integer array <strong>nums</strong> of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.</p>
+      <p><strong>Example:</strong> Input: nums = [1,2,3] → Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 1: Backtracking (Recursive)</h2>
+      <p><strong>Explanation (Brute/Standard):</strong> This is the classic "choose/don't choose" backtracking approach. We define a recursive function that takes the current index. For each element, we make two decisions: either include the element in our current subset and recurse, or not include it and recurse. When we reach the end of the array, the `current` subset is a valid one to add to our results.</p>
+      <p><strong>Time Complexity:</strong> O(N * 2^N) because there are 2^N subsets, and for each, we may need O(N) time to create a copy.</p>
+      <p><strong>Space Complexity:</strong> O(N) for the recursion stack depth.</p>
+      <pre class="pseudo-code">
+function subsets(nums):
+    result = []
+    backtrack(result, [], nums, 0)
+    return result
+
+function backtrack(result, current, nums, start_index):
+    add copy of current to result
+    
+    for i from start_index to length(nums)-1:
+        current.push(nums[i]) // Include
+        backtrack(result, current, nums, i + 1)
+        current.pop() // Backtrack (Don't include)
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 2: Cascading (Iterative)</h2>
+      <p><strong>Explanation (Better):</strong> Start with an empty list of subsets. Iterate through each number in the input array. For each number, iterate through the current list of subsets and create a new subset by adding the current number to each one. Add these new subsets to the main list. This effectively doubles the number of subsets at each step.</p>
+      <p><strong>Time Complexity:</strong> O(N * 2^N)</p>
+      <p><strong>Space Complexity:</strong> O(N * 2^N) to store the output.</p>
+      <pre class="pseudo-code">
+function subsets(nums):
+    result = [[]] // Start with the empty subset
+    for num in nums:
+        new_subsets = []
+        for current_subset in result:
+            new_subset = copy(current_subset)
+            new_subset.push(num)
+            new_subsets.push(new_subset)
+        result.extend(new_subsets)
+    return result
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 3: Bit Manipulation</h2>
+      <p><strong>Explanation (Optimal):</strong> For a set of N elements, there are 2^N possible subsets. We can map each subset to a unique integer from 0 to 2^N - 1. The binary representation of this integer acts as a bitmask. If the i-th bit of the integer is 1, it means the i-th element of the input array is included in the subset; otherwise, it's not. We can loop from 0 to 2^N - 1 and generate each subset accordingly.</p>
+      <p><strong>Time Complexity:</strong> O(N * 2^N)</p>
+      <p><strong>Space Complexity:</strong> O(N * 2^N) to store the output.</p>
+      <pre class="pseudo-code">
+function subsets(nums):
+    n = length(nums)
+    result = []
+    for i from 0 to (2^n - 1):
+        subset = []
+        for j from 0 to n-1:
+            // Check if the j-th bit is set in i
+            if (i >> j) & 1:
+                subset.push(nums[j])
+        result.push(subset)
+    return result
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

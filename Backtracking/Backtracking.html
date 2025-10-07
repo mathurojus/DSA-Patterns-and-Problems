@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeDSA Backtracking</title>
+    <link rel="stylesheet" href="../CSS/AllTopics.css" />
+    <link rel="stylesheet" href="../CSS/snake.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">CodeDSA</div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <button id="snakeToggle" class="snake-btn">
+          <span style="margin-left: 20px">Snake Cursor</span>
+        </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+      </div>
+    </nav>
+
+  <main>
+    <h1>Backtracking Topics</h1>
+    <p class="intro-text">
+      Master essential backtracking problems and patterns frequently asked in FAANG interviews.
+    </p>
+
+    <div id="topic-progress-bar">
+      <div id="topic-progress"></div>
+      <div id="topic-progress-text">Progress: 0 / 5 Topics</div>
+    </div>
+
+    <ul id="topics" class="topic-list" data-topic="backtracking">
+      <li>
+        <a href="./Problems/combinationSum.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">01</span>
+          <span class="topic-name">Combination Sum</span>
+          <span class="topic-desc">Classic decision-tree backtracking to find all combinations</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/sudokuSolver.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">02</span>
+          <span class="topic-name">Sudoku Solver</span>
+          <span class="topic-desc">Constraint-based backtracking on a 2D grid</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/permutations.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">03</span>
+          <span class="topic-name">Permutations</span>
+          <span class="topic-desc">Generate all possible orderings of a set of elements</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/subsets.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">04</span>
+          <span class="topic-name">Subsets (Power Set)</span>
+          <span class="topic-desc">Generate all possible subsets from a given set</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/nQueens.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">05</span>
+          <span class="topic-name">N-Queens Problem</span>
+          <span class="topic-desc">Advanced constraint-based backtracking problem</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="pattern-coverage">
+      <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
+      These problems cover the most
+      <em>important backtracking patterns</em> for interviews:
+      <br /><br />
+
+      <span class="pattern-name">Combination Sum / Subsets</span> →
+      <span class="pattern-desc">"Choose / Don't Choose" pattern for combination and subset problems.</span><br />
+      <span class="pattern-name">Permutations</span> →
+      <span class="pattern-desc">Swapping-based pattern for generating all orderings of a collection.</span><br />
+      <span class="pattern-name">Sudoku Solver / N-Queens</span> →
+      <span class="pattern-desc">Constraint propagation on a matrix, a common pattern in grid-based backtracking.</span><br /><br />
+
+      Together, they ensure you understand the core patterns for
+      <span class="highlight">combinations, permutations, and constraint satisfaction</span>
+      in backtracking problems.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>

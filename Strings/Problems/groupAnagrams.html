@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="../../CSS/AllProblems.css" />
     <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
     <link rel="stylesheet" href="../../CSS/snake.css" />
+    <link rel="stylesheet" href="../../CSS/Flowchart.css"/>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo">CodeDSA</div>
+       <div class="logo-container">
+  <div class="logo-img">
+    <img src="../../images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+</div>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="../../index.html">Home</a></li>
@@ -37,8 +43,8 @@
       </nav>
     </div>
 
-    <main>
-      <h1>Group Anagrams</h1>
+  <main>
+    <h1>Group Anagrams</h1>
 
       <!-- Problem Statement -->
       <section class="problem-section">
@@ -51,6 +57,7 @@
           <strong>Example:</strong> Input: ["eat","tea","tan","ate","nat","bat"]
           → Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
         </p>
+        
       </section>
 
       <!-- Approaches -->
@@ -74,17 +81,18 @@ for each word in strs:
 return groups
       </pre
         >
+         <div class="fc-container">
+    <button class="fc-button">View Flowchart</button>
+    <img src="../Flowcharts/4stringapproach1.png" alt="Heap Sort Flowchart" class="fc-image" />
+  </div>
       </section>
 
-      <section class="approach-section">
-        <h2>Approach 2: Sorting & Hash Map</h2>
-        <p>
-          <strong>Explanation:</strong> Sort each string, use it as a key in
-          hash map to group anagrams.
-        </p>
-        <p><strong>Time Complexity:</strong> O(n * k log k)</p>
-        <p><strong>Space Complexity:</strong> O(n * k)</p>
-        <pre class="pseudo-code">
+    <section class="approach-section">
+      <h2>Approach 2: Sorting & Hash Map</h2>
+      <p><strong>Explanation:</strong> Sort each string, use it as a key in hash map to group anagrams.</p>
+      <p><strong>Time Complexity:</strong> O(n * k log k)</p>
+      <p><strong>Space Complexity:</strong> O(n * k)</p>
+      <pre class="pseudo-code">
 map = {}
 for word in strs:
     key = sort(word)
@@ -94,17 +102,18 @@ for word in strs:
 return list(map.values())
       </pre
         >
+         <div class="fc-container">
+    <button class="fc-button">View Flowchart</button>
+    <img src="../Flowcharts/4stringapproach2.png" alt="Heap Sort Flowchart" class="fc-image" />
+  </div>
       </section>
 
-      <section class="approach-section">
-        <h2>Approach 3: Character Count Hashing (Optimal)</h2>
-        <p>
-          <strong>Explanation:</strong> Count frequency of each char, convert
-          count to tuple as hash map key.
-        </p>
-        <p><strong>Time Complexity:</strong> O(n * k)</p>
-        <p><strong>Space Complexity:</strong> O(n * k)</p>
-        <pre class="pseudo-code">
+    <section class="approach-section">
+      <h2>Approach 3: Character Count Hashing (Optimal)</h2>
+      <p><strong>Explanation:</strong> Count frequency of each char, convert count to tuple as hash map key.</p>
+      <p><strong>Time Complexity:</strong> O(n * k)</p>
+      <p><strong>Space Complexity:</strong> O(n * k)</p>
+      <pre class="pseudo-code">
 map = {}
 for word in strs:
     count = [0]*26
@@ -117,6 +126,11 @@ for word in strs:
 return list(map.values())
       </pre
         >
+        <div class="fc-container">
+    <button class="fc-button">View Flowchart</button>
+    <img src="../Flowcharts/4stringapproach1.png" alt="Heap Sort Flowchart" class="fc-image" />
+  </div>
+         
       </section>
     </main>
 
@@ -127,5 +141,7 @@ return list(map.values())
 
     <script src="../../index.js"></script>
     <script src="../../JS/problemTracker.js"></script>
+    <script src="../../JS/Flowcharts.js"></script>
+
   </body>
 </html>

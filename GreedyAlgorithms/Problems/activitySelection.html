@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Selection - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+     <div class="logo-container">
+  <div class="logo-img">
+    <img src="../../images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../greedyAlgo.html">Greedy Algorithms</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Activity Selection</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Activity Selection Problem</h1>
+
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>Select the maximum number of activities that don’t overlap.</p>
+      <p><strong>Example:</strong> Activities = [(1,3),(2,4),(3,5)] → Output: 2</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 1: Brute Force</h2>
+      <p>Try all subsets of activities and count non-overlapping ones.</p>
+      <p><strong>Time Complexity:</strong> O(2^n)</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+      <pre class="pseudo-code">
+for each subset of activities:
+    if no two activities overlap:
+        count++
+return maximum count
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 2: Better</h2>
+      <p>Sort by start time and recursively select compatible activities.</p>
+      <p><strong>Time Complexity:</strong> O(n^2)</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+      <pre class="pseudo-code">
+sort activities by start time
+function selectActivities(current, activities):
+    for next in activities after current:
+        if next.start >= current.end:
+            count++
+            selectActivities(next, activities)
+return maximum count
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 3: Optimal Greedy</h2>
+      <p>Sort by finish time and iteratively select next compatible activity.</p>
+      <p><strong>Time Complexity:</strong> O(n log n)</p>
+      <p><strong>Space Complexity:</strong> O(1)</p>
+      <pre class="pseudo-code">
+sort activities by finish time
+lastSelected = first activity
+count = 1
+for each activity in sorted list:
+    if activity.start >= lastSelected.end:
+        select activity
+        lastSelected = activity
+        count++
+return count
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CodeDSA. All rights reserved.</p>
+  </footer>
+
+  <script src="../../index.js"></script>
+  <script src="../../JS/problemTracker.js"></script>
+</body>
+</html>

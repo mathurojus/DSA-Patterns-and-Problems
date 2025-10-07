@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeDSA Greedy Algorithms</title>
+  <link rel="stylesheet" href="../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../CSS/AllTopics.css" />
+  <link rel="stylesheet" href="../CSS/snake.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <div class="logo-img">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="logo">CodeDSA</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn">
+        <span style="margin-left: 20px">Snake Cursor</span>
+      </button>
+      <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-container">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+      <li class="breadcrumb-item active">Greedy Algorithms</li>
+    </ul>
+  </div>
+
+  <main>
+    <h1>Greedy Algorithm Topics</h1>
+    <p class="intro-text">
+      Explore 5 popular greedy problems frequently asked in FAANG interviews.
+    </p>
+
+    <div id="topic-progress-bar">
+      <div id="topic-progress"></div>
+      <div id="topic-progress-text">Progress: 0 / 5 Topics</div>
+    </div>
+
+    <ul id="topics" class="topic-list" data-topic="greedy">
+      <li>
+        <a href="./Problems/activitySelection.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">01</span>
+          <span class="topic-name">Activity Selection</span>
+          <span class="topic-desc">Select maximum number of non-overlapping activities</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/fractionalKnapsack.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">02</span>
+          <span class="topic-name">Fractional Knapsack</span>
+          <span class="topic-desc">Maximize value in knapsack using fractions of items</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/jobScheduling.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">03</span>
+          <span class="topic-name">Job Scheduling</span>
+          <span class="topic-desc">Maximize profit given deadlines for jobs</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/minPlatforms.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">04</span>
+          <span class="topic-name">Minimum Platforms</span>
+          <span class="topic-desc">Minimum number of railway platforms required</span>
+        </a>
+      </li>
+      <li>
+        <a href="./Problems/huffmanEncoding.html">
+          <span class="topic-completed">&nbsp;</span>
+          <span class="topic-number">05</span>
+          <span class="topic-name">Huffman Encoding</span>
+          <span class="topic-desc">Build minimum-length prefix codes for data compression</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="pattern-coverage">
+      <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
+      These problems cover key <em>greedy algorithm patterns</em> asked in interviews: <br /><br />
+
+      <span class="pattern-name">Activity Selection</span> → 
+      <span class="pattern-desc">Interval scheduling, selecting non-overlapping activities.</span><br />
+      <span class="pattern-name">Fractional Knapsack</span> → 
+      <span class="pattern-desc">Max value selection using ratios, greedy by value/weight.</span><br />
+      <span class="pattern-name">Job Scheduling</span> → 
+      <span class="pattern-desc">Schedule jobs with deadlines for maximum profit.</span><br />
+      <span class="pattern-name">Minimum Platforms</span> → 
+      <span class="pattern-desc">Overlapping interval counting with two pointers or sorting.</span><br />
+      <span class="pattern-name">Huffman Encoding</span> → 
+      <span class="pattern-desc">Build optimal prefix codes using min-heap.</span><br /><br />
+
+      Together, they ensure understanding of 
+      <span class="highlight">interval scheduling, ratio-based selection, deadline scheduling, overlapping intervals, and priority queue techniques</span>.
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+
+</html>

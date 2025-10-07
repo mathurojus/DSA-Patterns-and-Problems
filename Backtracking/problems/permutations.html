@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permutations - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Backtracking.html">Backtracking</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Permutations</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Permutations</h1>
+
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>Given an array <strong>nums</strong> of distinct integers, return all the possible permutations. You can return the answer in any order.</p>
+      <p><strong>Example:</strong> Input: nums = [1,2,3] → Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 1: Backtracking with a Visited Array</h2>
+      <p><strong>Explanation (Brute):</strong> Use a helper function that recursively builds a permutation. Maintain a `visited` boolean array to keep track of which elements from the input array have been included in the current permutation. If the current permutation's size equals the input array's size, a valid permutation is found.</p>
+      <p><strong>Time Complexity:</strong> O(N! * N) because there are N! permutations, and each one takes O(N) time to be built and added to the result list.</p>
+      <p><strong>Space Complexity:</strong> O(N) for the visited array and recursion stack.</p>
+      <pre class="pseudo-code">
+function permute(nums):
+    result = []
+    backtrack(result, [], nums, visited_array_of_false)
+    return result
+
+function backtrack(result, current, nums, visited):
+    if length(current) == length(nums):
+        add copy of current to result
+        return
+    for i from 0 to length(nums)-1:
+        if visited[i] == false:
+            visited[i] = true
+            current.push(nums[i])
+            backtrack(result, current, nums, visited)
+            current.pop() // Backtrack
+            visited[i] = false // Backtrack
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 2: Backtracking with Swapping</h2>
+      <p><strong>Explanation (Better):</strong> An in-place approach that avoids the extra `visited` array. The idea is to generate permutations by swapping elements. For a given index `i`, we swap the element at `i` with every element from `i` to the end of the array. After each swap, we make a recursive call for the next index `i+1`. After the recursive call returns, we backtrack by swapping the elements back to their original positions.</p>
+      <p><strong>Time Complexity:</strong> O(N! * N)</p>
+      <p><strong>Space Complexity:</strong> O(N) for the recursion stack depth (better than the previous O(N) for visited array + O(N) for stack).</p>
+      <pre class="pseudo-code">
+function permute(nums):
+    result = []
+    backtrack(result, nums, 0)
+    return result
+
+function backtrack(result, nums, start_index):
+    if start_index == length(nums):
+        add copy of nums to result
+        return
+    for i from start_index to length(nums)-1:
+        swap(nums[start_index], nums[i])
+        backtrack(result, nums, start_index + 1)
+        swap(nums[start_index], nums[i]) // Backtrack
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 3: Iterative (Heap's Algorithm)</h2>
+      <p><strong>Explanation (Optimal):</strong> While backtracking is standard in interviews, a purely iterative method like Heap's Algorithm can generate permutations with minimal overhead. It produces every possible permutation of n elements by a series of swaps. This approach is less intuitive but is a classic and efficient algorithm for this specific problem.</p>
+      <p><strong>Time Complexity:</strong> O(N!)</p>
+      <p><strong>Space Complexity:</strong> O(N) to store the permutation itself.</p>
+      <pre class="pseudo-code">
+// Heap's algorithm is typically implemented with a loop
+// and conditional swaps based on whether the current
+// iteration index is even or odd.
+// It's a non-recursive way to achieve the same result.
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

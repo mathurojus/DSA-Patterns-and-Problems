@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Backtracking.html">Backtracking</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sudoku Solver</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Sudoku Solver</h1>
+
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>Write a program to solve a Sudoku puzzle by filling the empty cells. A sudoku solution must satisfy all of the following rules: 1. Each of the digits 1-9 must occur exactly once in each row. 2. Each of the digits 1-9 must occur exactly once in each column. 3. Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.</p>
+      <p><strong>Example:</strong> Given a partially filled 9x9 grid, return the solved grid.</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 1: Simple Backtracking</h2>
+      <p><strong>Explanation (Brute):</strong> Find the first empty cell ('.'). Try placing numbers from 1 to 9 in that cell. For each number, check if it's valid (doesn't violate Sudoku rules). If it's valid, recursively call the solver for the next empty cell. If the recursive call returns true, a solution is found. If not, backtrack by resetting the cell to '.' and try the next number.</p>
+      <p><strong>Time Complexity:</strong> O(9^(N*N)), where N is 9. In practice, it's much faster due to constraints.</p>
+      <p><strong>Space Complexity:</strong> O(N*N) for the recursion stack depth.</p>
+      <pre class="pseudo-code">
+function solveSudoku(board):
+    for row from 0 to 8:
+        for col from 0 to 8:
+            if board[row][col] == '.':
+                for num from 1 to 9:
+                    if isValid(board, row, col, num):
+                        board[row][col] = num
+                        if solveSudoku(board) == true:
+                            return true
+                        else:
+                            board[row][col] = '.' // Backtrack
+                return false
+    return true // Board is solved
+      </pre>
+    </section>
+
+    <section class="approach-section">
+      <h2>Approach 2: Backtracking with Pre-computation</h2>
+      <p><strong>Explanation (Better):</strong> Instead of repeatedly checking rows, columns, and boxes for validity, we can use boolean arrays (or hash sets) to keep track of which numbers are already used in each row, column, and 3x3 box. This makes the `isValid` check an O(1) operation instead of O(N).</p>
+      <p><strong>Time Complexity:</strong> Still exponential, but the constant factor is significantly smaller.</p>
+      <p><strong>Space Complexity:</strong> O(N*N) to store the pre-computed states.</p>
+      <pre class="pseudo-code">
+// Initialize rows[9][10], cols[9][10], boxes[9][10] to false
+// Pre-populate these arrays based on the initial board state
+
+function solve():
+    // find empty cell (row, col)
+    ...
+    for num from 1 to 9:
+        if not rows[row][num] and not cols[col][num] and not boxes[box_index][num]:
+            // place number and update boolean arrays
+            solve()
+            // backtrack and reset boolean arrays
+      </pre>
+    </section>
+    
+    <section class="approach-section">
+      <h2>Approach 3: Optimized Backtracking (Heuristics)</h2>
+      <p><strong>Explanation (Optimal):</strong> A powerful heuristic is to not just find the *next* empty cell, but to find the empty cell with the *fewest possible valid placements*. This is called the "Most Constrained Heuristic". By solving the most constrained cells first, we are likely to prune the search tree much more aggressively, leading to a much faster solution.</p>
+      <p><strong>Time Complexity:</strong> Same worst-case, but significantly faster on average Sudoku puzzles.</p>
+      <p><strong>Space Complexity:</strong> O(N*N).</p>
+      <pre class="pseudo-code">
+function solve():
+    find the empty cell with the minimum number of valid candidate numbers
+    if no such cell:
+        return true // solved
+    
+    for each valid candidate number for that cell:
+        place number
+        if solve() == true:
+            return true
+        backtrack
+    return false
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

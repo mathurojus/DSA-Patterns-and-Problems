@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeDSA Strings</title>
+    <link rel="stylesheet" href="../CSS/breadcrumb.css">   
     <link rel="stylesheet" href="../CSS/AllTopics.css" />
     <link rel="stylesheet" href="../CSS/snake.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo">CodeDSA</div>
+      <div class="logo-container">
+  <div class="logo-img">
+    <img src="../images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+</div>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
@@ -20,99 +26,105 @@
         <button id="snakeToggle" class="snake-btn">
           <span style="margin-left: 20px">Snake Cursor</span>
         </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
       </div>
     </nav>
+<link rel="stylesheet" href="../CSS/breadcrumb.css">   
+<div class="breadcrumb-container">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+    <li class="breadcrumb-item active">Strings</li>
+  </ul>
+</div>
+  <main>
+    <h1>String Topics</h1>
+    <p class="intro-text">
+      Master essential string problems and patterns frequently asked in
+      interviews.
+    </p>
 
-    <main>
-      <h1>String Topics</h1>
-      <p class="intro-text">
-        Master essential string problems and patterns frequently asked in
-        interviews.
-      </p>
+    <div id="topic-progress-bar">
+      <div id="topic-progress"></div>
+      <div id="topic-progress-text">Progress: 0 / 5 Topics</div>
+    </div>
 
-      <ul class="topic-list">
+    <ul id="topics" class="topic-list" data-topic="string">
+      <li>
         <a href="./Problems/longestPalinSubstring.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">01</span>
           <span class="topic-name">Longest Palindromic Substring</span>
-          <span class="topic-desc"
-            >Find the longest substring that is a palindrome</span
-          >
+          <span class="topic-desc">Find the longest substring that is a palindrome</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/longestSubstringWithoutRepeat.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">02</span>
-          <span class="topic-name"
-            >Longest Substring Without Repeating Characters</span
-          >
-          <span class="topic-desc"
-            >Sliding window pattern to track unique characters</span
-          >
+          <span class="topic-name">Longest Substring Without Repeating Characters</span>
+          <span class="topic-desc">Sliding window pattern to track unique characters</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/validAnagrams.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">03</span>
           <span class="topic-name">Valid Anagram</span>
-          <span class="topic-desc"
-            >Hash map pattern to check frequency of characters</span
-          >
+          <span class="topic-desc">Hash map pattern to check frequency of characters</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/groupAnagrams.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">04</span>
           <span class="topic-name">Group Anagrams</span>
-          <span class="topic-desc"
-            >Sorting & hash-based grouping of strings</span
-          >
+          <span class="topic-desc">Sorting & hash-based grouping of strings</span>
         </a>
+      </li>
+
+      <li>
         <a href="./Problems/Matching.html">
+          <span class="topic-completed">&nbsp;</span>
           <span class="topic-number">05</span>
           <span class="topic-name">String Matching / Pattern Matching</span>
-          <span class="topic-desc"
-            >KMP / Rabin-Karp algorithm for substring search</span
-          >
+          <span class="topic-desc">KMP / Rabin-Karp algorithm for substring search</span>
         </a>
-      </ul>
+    </ul>
 
-      <p class="pattern-coverage">
-        <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
-        These problems cover the most <em>important string patterns</em> for
-        interviews: <br /><br />
+    <p class="pattern-coverage">
+      <strong>WONDERING, HOW DOES IT COVER PATTERNS?</strong> <br />
+      These problems cover the most <em>important string patterns</em> for
+      interviews: <br /><br />
 
-        <span class="pattern-name">Longest Palindromic Substring</span> →
-        <span class="pattern-desc"
-          >Expand around center, dynamic programming, palindrome checking.</span
-        ><br />
-        <span class="pattern-name"
-          >Longest Substring Without Repeating Characters</span
-        >
-        →
-        <span class="pattern-desc"
-          >Sliding window, hash map to track characters.</span
-        ><br />
-        <span class="pattern-name">Valid Anagram</span> →
-        <span class="pattern-desc">Hashing frequency counts, comparison.</span
-        ><br />
-        <span class="pattern-name">Group Anagrams</span> →
-        <span class="pattern-desc"
-          >Sort string or use character count as key in hash map.</span
-        ><br />
-        <span class="pattern-name">String Matching / Pattern Matching</span> →
-        <span class="pattern-desc"
-          >KMP algorithm, rolling hash (Rabin-Karp) for efficient substring
-          search.</span
-        ><br /><br />
+      <span class="pattern-name">Longest Palindromic Substring</span> →
+      <span class="pattern-desc">Expand around center, dynamic programming, palindrome checking.</span><br />
+      <span class="pattern-name">Longest Substring Without Repeating Characters</span>
+      →
+      <span class="pattern-desc">Sliding window, hash map to track characters.</span><br />
+      <span class="pattern-name">Valid Anagram</span> →
+      <span class="pattern-desc">Hashing frequency counts, comparison.</span><br />
+      <span class="pattern-name">Group Anagrams</span> →
+      <span class="pattern-desc">Sort string or use character count as key in hash map.</span><br />
+      <span class="pattern-name">String Matching / Pattern Matching</span> →
+      <span class="pattern-desc">KMP algorithm, rolling hash (Rabin-Karp) for efficient substring
+        search.</span><br /><br />
 
-        Together, they ensure you understand
-        <span class="highlight"
-          >palindromes, sliding window, hash-based frequency, grouping, and
-          efficient substring search techniques</span
-        >
-        in strings.
-      </p>
-    </main>
+      Together, they ensure you understand
+      <span class="highlight">palindromes, sliding window, hash-based frequency, grouping, and
+        efficient substring search techniques</span>
+      in strings.
+    </p>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
 
-    <script src="../index.js"></script>
-  </body>
+  <script src="../index.js"></script>
+</body>
+
 </html>

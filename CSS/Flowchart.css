@@ -1,0 +1,36 @@
+/* === Unique Flowchart Component Styles === */
+
+/* The container for our component. It's always visible. */
+.fc-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Our uniquely named button. */
+.fc-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #667eea, #764ba2); /* A different gradient to show it's unique */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.fc-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Our uniquely named image, hidden by default. */
+.fc-image {
+  display: none; 
+  max-width: 100%;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

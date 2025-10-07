@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Topics Home</title>
     <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/navbar.css" />
     <link rel="stylesheet" href="CSS/snake.css" />
+    <link rel="stylesheet" href="CSS/topicsFilter.css" />
+    <link rel="stylesheet" href="CSS/RightSidebar.css" />
   </head>
-
   <body>
-    <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo">CodeDSA</div>
+      <div class="logo-container">
+  <div class="logo-img">
+    <img src="Images/logo.png" alt="Logo">
+  </div>
+  <div class="logo">CodeDSA</div>
+
+</div>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -21,10 +28,10 @@
         <button id="snakeToggle" class="snake-btn">
           <span style="margin-left: 20px">Snake Cursor</span>
         </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
       </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="home-container">
       <main>
         <h1>Explore Topics</h1>
@@ -32,6 +39,10 @@
           <a class="card" href="./Arrays/arrays.html">
             <h3>Arrays</h3>
             <p>Problems related to arrays (TwoSum, MaximumSubarray, ...)</p>
+          </a>
+          <a class="card" href="./Sorting/sorting.html">
+            <h3>Sorting</h3>
+            <p>Problems related to sorting (Bubble sort, Merge Sort, ...)</p>
           </a>
           <a class="card" href="./LinkedList/LL.html">
             <h3>Linked Lists</h3>
@@ -51,6 +62,11 @@
               Recursive solutions and backtracking (Factorial, NQueens, ...)
             </p>
           </a>
+          <a class="card" href="./Backtracking/Backtracking.html">
+            <h3>Backtracking</h3>
+            <p>Backtracking solutions (Combination Sum, Sudoku Solver, ...)</p>
+          </a>
+        
           <a class="card" href="./BinarySearch/binarySearch.html">
             <h3>Binary Search</h3>
             <p>Binary search and its variations</p>
@@ -79,20 +95,176 @@
             <h3>Tries</h3>
             <p>Trie / Prefix tree problems</p>
           </a>
+          <a class="card" href="./Maths/MathProblems.html">
+            <h3>Maths</h3>
+            <p>Mathematical problems and concepts</p>
+          </a>
+          <a
+            class="card"
+            href="./DivideAndConquer/DivideAndConquerProblems.html"
+          >
+            <h3>Divide and Conquer</h3>
+            <p>
+              Problems related to Divide and Conquer (Kth Kthlargestelement,
+              Median of 2 sorted lists, ...)
+            </p>
+          </a>
         </div>
       </main>
-      <aside class="recently-viewed-sidebar">
-        <h2>🕒<span> &nbsp;Recently Viewed</span></h2>
-        <ul id="recently-viewed-list"></ul>
-        <button id="clear-history-btn">Clear History</button>
-      </aside>
+      <div class="right-sidebar">
+        <aside class="recently-viewed-sidebar">
+          <h2>🕒<span> &nbsp;Recently Viewed</span></h2>
+          <ul id="recently-viewed-list"></ul>
+          <button id="clear-history-btn">Clear History</button>
+        </aside>
+        <aside class="topics-filter-sidebar">
+          <h2>Topics Filter</h2>
+          <div class="filter-dropdown">
+            <button class="dropdown-toggle" id="topicsDropdownBtn">
+              Select Topics <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-content" id="topicsDropdownContent">
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="arrays"
+                  checked
+                />
+                Arrays</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="linkedlist"
+                  checked
+                />
+                Linked Lists</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="stacks"
+                  checked
+                />
+                Stacks & Queues</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="strings"
+                  checked
+                />
+                Strings</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="recursion"
+                  checked
+                />
+                Recursion</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="binarysearch"
+                  checked
+                />
+                Binary Search</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="heaps"
+                  checked
+                />
+                Heaps</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="binarytrees"
+                  checked
+                />
+                Binary Trees</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="bst"
+                  checked
+                />
+                Binary Search Trees</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="graphs"
+                  checked
+                />
+                Graphs</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="dp"
+                  checked
+                />
+                Dynamic Programming</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="tries"
+                  checked
+                />
+                Tries</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="topic-filter"
+                  value="divideandconquer"
+                  checked
+                />
+                Divide and Conquer</label
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
-
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 CodeDSA. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html" aria-label="Go to Home page">Home</a>
+          <a href="about.html" aria-label="Go to About page">About</a>
+          <a href="contact.html" aria-label="Go to Contact page">Contact</a>
+          <a
+            href="https://github.com/MrunaliniPachpute"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit GitHub"
+            >GitHub</a
+          >
+        </div>
+        <p>&copy; 2025 CodeDSA. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="index.js"></script>
+    <script src="JS/filterDropdownScript.js"></script>
   </body>
 </html>

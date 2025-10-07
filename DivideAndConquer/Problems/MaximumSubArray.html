@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maximum SubArray - CodeDSA</title>
+    <link rel="stylesheet" href="../../CSS/AllProblems.css" />
+    <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
+    <link rel="stylesheet" href="../../CSS/snake.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">CodeDSA</div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+        <button id="snakeToggle" class="snake-btn">
+          <span style="margin-left: 20px">Snake Cursor</span>
+        </button>
+        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="../DivideAndConquerProblems.html">Divide and Conquer</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Maximum SubArray
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <main>
+      <h1>Maximum SubArray</h1>
+
+      <!-- Problem Statement -->
+      <section class="problem-section">
+        <h2>Problem Statement</h2>
+        <p>
+          Given an integer array <strong>nums[]</strong>, find the
+          <strong>contiguous subarray</strong> (containing at least one number)
+          which has the <strong>largest sum</strong> and return its sum.
+        </p>
+        <p>
+          <strong>Example:</strong> Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5,
+          4]<br />
+          Output: 6<br />
+          Explanation: [4, -1, 2, 1] has the largest sum = 6.
+        </p>
+      </section>
+
+      <!-- Approaches -->
+      <section class="approach-section">
+        <h2>Approach 1: Brute Force</h2>
+        <p>
+          <strong>Explanation:</strong> Generate all possible subarrays and
+          calculate their sum to find the maximum.
+        </p>
+        <p><strong>Time Complexity:</strong> O(n<sup>3</sup>)</p>
+        <p><strong>Space Complexity:</strong> O(1)</p>
+        <pre class="pseudo-code">
+function maxSubArray(arr):
+    n = length(arr)
+    maxSum = -infinity
+    
+    for i = 0 to n-1:
+        for j = i to n-1:
+            currentSum = 0
+            for k = i to j:
+                currentSum = currentSum + arr[k]
+            maxSum = max(maxSum, currentSum)
+    
+    return maxSum
+      </pre
+        >
+      </section>
+
+      <section class="approach-section">
+        <h2>Approach 2: Divide and Conquer</h2>
+        <p>
+          <strong>Explanation:</strong> Divide the array into two halves. The
+          maximum subarray can be in the left half, right half, or crossing the
+          middle. Recursively find the maximum in each case.
+        </p>
+        <p><strong>Time Complexity:</strong> O(n log n)</p>
+        <p>
+          <strong>Space Complexity:</strong> O(log n) due to recursive stack
+        </p>
+        <pre class="pseudo-code">
+function maxCrossingSum(arr, low, mid, high):
+    leftSum = -infinity
+    sum = 0
+    for i = mid down to low:
+        sum = sum + arr[i]
+        leftSum = max(leftSum, sum)
+    
+    rightSum = -infinity
+    sum = 0
+    for i = mid+1 to high:
+        sum = sum + arr[i]
+        rightSum = max(rightSum, sum)
+    
+    return leftSum + rightSum
+
+function maxSubArrayDC(arr, low, high):
+    if low == high:
+        return arr[low]
+    
+    mid = (low + high) / 2
+    
+    leftMax = maxSubArrayDC(arr, low, mid)
+    rightMax = maxSubArrayDC(arr, mid+1, high)
+    crossMax = maxCrossingSum(arr, low, mid, high)
+    
+    return max(leftMax, rightMax, crossMax)
+
+function maxSubArray(arr):
+    return maxSubArrayDC(arr, 0, length(arr)-1)
+        </pre>
+      </section>
+
+      <section class="approach-section">
+        <h2>Approach 3: Kadane's Algorithm (Dynamic Programming)</h2>
+        <p>
+          <strong>Explanation:</strong> Keep track of the maximum sum ending at
+          each position. At each element, decide whether to extend the existing
+          subarray or start a new one.
+        </p>
+        <p><strong>Time Complexity:</strong> O(n)</p>
+        <p><strong>Space Complexity:</strong> O(1)</p>
+        <pre class="pseudo-code">
+function maxSubArray(arr):
+    n = length(arr)
+    maxSum = arr[0]
+    currentSum = arr[0]
+    
+    for i = 1 to n-1:
+        currentSum = max(arr[i], currentSum + arr[i])
+        maxSum = max(maxSum, currentSum)
+    
+    return maxSum
+      </pre
+        >
+      </section>
+
+      <p>
+        <strong>
+          Though Divide and Conquer is not the most optimal approach for this
+          problem, it is included here to illustrate the Divide and Conquer
+          pattern. The optimal solution is Kadane's Algorithm with O(n) time
+          complexity.</strong
+        >
+      </p>
+      <br />
+
+      <!-- Flowchart Section -->
+      <section>
+        <button id="toggleBtn" class="toggle-btn">Show Flowchart ▲</button>
+        <div id="flowchart" class="flowchart-container">
+          <img
+            src="../flowcharts/problem2.png"
+            alt="Flowchart"
+            height="1000px"
+            width="500px"
+          />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+    </footer>
+
+    <script src="../../index.js"></script>
+    <script src="../../JS/problemTracker.js"></script>
+  </body>
+</html>

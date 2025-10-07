@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selection Sort - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Sorting.html">Sorting</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Selection Sort</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Selection Sort</h1>
+
+    <section class="problem-section">
+      <h2>Algorithm Explanation</h2>
+      <p>Selection Sort is an in-place comparison sorting algorithm. It divides the input list into two parts: a sorted sublist of items which is built up from left to right at the front of the list and a sublist of the remaining unsorted items. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest element in the unsorted sublist, exchanging it with the leftmost unsorted element, and moving the sublist boundaries one element to the right.</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Pseudocode</h2>
+      <pre class="pseudo-code">
+function selectionSort(array):
+  n = length(array)
+  for i from 0 to n-1:
+    minIndex = i
+    for j from i+1 to n:
+      if array[j] < array[minIndex]:
+        minIndex = j
+    swap(array[i], array[minIndex])
+      </pre>
+    </section>
+    
+    <section class="approach-section">
+      <h2>Complexity & Properties</h2>
+      <ul>
+        <li><strong>Time Complexity:</strong> O(n²) in all cases (best, average, and worst).</li>
+        <li><strong>Space Complexity:</strong> O(1) as it's an in-place sort.</li>
+        <li><strong>Stable:</strong> No, it is not a stable sort.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

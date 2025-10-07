@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertion Sort - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">CodeDSA</div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Sorting.html">Sorting</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Insertion Sort</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Insertion Sort</h1>
+
+    <section class="problem-section">
+      <h2>Algorithm Explanation</h2>
+      <p>Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It iterates through an input array and for each element, it removes it and finds its correct position within the sorted part of the array, shifting other elements to the right to make space.</p>
+    </section>
+
+    <section class="approach-section">
+      <h2>Pseudocode</h2>
+      <pre class="pseudo-code">
+function insertionSort(array):
+  n = length(array)
+  for i from 1 to n-1:
+    key = array[i]
+    j = i - 1
+    // Move elements of array[0..i-1], that are greater than key,
+    // to one position ahead of their current position
+    while j >= 0 and array[j] > key:
+      array[j + 1] = array[j]
+      j = j - 1
+    array[j + 1] = key
+      </pre>
+    </section>
+    
+    <section class="approach-section">
+      <h2>Complexity & Properties</h2>
+      <ul>
+        <li><strong>Time Complexity:</strong> O(n²) in the worst and average case. O(n) in the best case (if the array is nearly sorted).</li>
+        <li><strong>Space Complexity:</strong> O(1) as it's an in-place sort.</li>
+        <li><strong>Stable:</strong> Yes, it maintains the relative order of equal elements.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
+  </footer>
+  <script src="../../index.js"></script>
+</body>
+</html>

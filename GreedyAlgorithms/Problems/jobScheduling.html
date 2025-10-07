@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Scheduling - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo-container">
+    <div class="logo-img"><img src="../../images/logo.png" alt="Logo"></div>
+    <div class="logo">CodeDSA</div>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button id="snakeToggle" class="snake-btn"><span style="margin-left:20px;">Snake Cursor</span></button>
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+  </div>
+</nav>
+
+<div class="breadcrumb-container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="../greedyAlgo.html">Greedy Algorithms</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Job Scheduling</li>
+    </ol>
+  </nav>
+</div>
+
+<main>
+  <h1>Job Scheduling with Deadlines</h1>
+
+  <section class="problem-section">
+    <h2>Problem Statement</h2>
+    <p>Schedule jobs to maximize total profit, each with a deadline and profit.</p>
+    <p><strong>Example:</strong> Jobs = [(a,2,100),(b,1,19),(c,2,27)], Output: Maximum profit = 127</p>
+  </section>
+
+  <section class="approach-section">
+    <h2>Approach 1: Brute Force</h2>
+    <p>Try all permutations of jobs and select feasible schedule with max profit.</p>
+    <pre class="pseudo-code">
+for each permutation of jobs:
+    if schedule is feasible (no overlapping deadlines):
+        calculate profit
+return maximum profit
+    </pre>
+  </section>
+
+  <section class="approach-section">
+    <h2>Approach 2: Better</h2>
+    <p>Sort by deadline and schedule recursively.</p>
+    <pre class="pseudo-code">
+sort jobs by deadline
+profit = 0
+for each job:
+    assign to latest available slot before deadline
+    profit += job.profit if slot available
+return profit
+    </pre>
+  </section>
+
+  <section class="approach-section">
+    <h2>Approach 3: Optimal Greedy</h2>
+    <p>Sort jobs by profit descending, assign latest available slot before deadline.</p>
+    <pre class="pseudo-code">
+sort jobs by profit descending
+initialize slots array
+for each job:
+    for j = min(deadline, n) downto 1:
+        if slot[j] is free:
+            assign job
+            totalProfit += job.profit
+            break
+return totalProfit
+    </pre>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 CodeDSA. All rights reserved.</p>
+</footer>
+<script src="../../index.js"></script>
+<script src="../../JS/problemTracker.js"></script>
+</body>
+</html>
