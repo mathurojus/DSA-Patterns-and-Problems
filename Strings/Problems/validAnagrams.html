@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
     <link rel="stylesheet" href="../../CSS/snake.css" />
     <link rel="stylesheet" href="../../CSS/Flowchart.css"/>
+            <link rel="stylesheet" href="../../CSS/copyToClipboard.css"/>
+
   </head>
   <body>
     <!-- Navbar -->
@@ -28,7 +30,19 @@
           <span style="margin-left: 20px">Snake Cursor</span>
         </button>
       </div>
-    </nav>
+      <div class="logo">CodeDSA</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn">
+        <span style="margin-left: 20px">Snake Cursor</span>
+      </button>
+    </div>
+  </nav>
 
   <!-- Breadcrumb Navigation -->
   <div class="breadcrumb-container">
@@ -49,7 +63,8 @@
     <section class="problem-section">
       <h2>Problem Statement</h2>
       <p>
-        Given two strings <strong>s</strong> and <strong>t</strong>, return true if <strong>t</strong> is an anagram of <strong>s</strong>, otherwise false.
+        Given two strings <strong>s</strong> and <strong>t</strong>, return true if <strong>t</strong> is an anagram of
+        <strong>s</strong>, otherwise false.
       </p>
       <p><strong>Example:</strong> Input: s = "anagram", t = "nagaram" → Output: true</p>
     </section>
@@ -66,7 +81,7 @@ if sort(s) == sort(t):
 else:
     return false
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach1.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -87,7 +102,7 @@ for char in t:
     count_t[char]++
 return count_s == count_t
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach2.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -112,7 +127,7 @@ for val in count.values():
         return false
 return true
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach3.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -128,6 +143,7 @@ return true
     <script src="../../index.js"></script>
     <script src="../../JS/problemTracker.js"></script>
     <script src="../../JS/Flowcharts.js"></script>
+  <script src="../../copyToClipboard.js"></script>
 
   </body>
 </html>

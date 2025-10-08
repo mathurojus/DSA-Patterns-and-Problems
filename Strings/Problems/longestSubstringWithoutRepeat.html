@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
     <link rel="stylesheet" href="../../CSS/snake.css" />
     <link rel="stylesheet" href="../../CSS/Flowchart.css"/>
+            <link rel="stylesheet" href="../../CSS/copyToClipboard.css"/>
+
   </head>
   <body>
     <!-- Navbar -->
@@ -28,7 +30,19 @@
           <span style="margin-left: 20px">Snake Cursor</span>
         </button>
       </div>
-    </nav>
+      <div class="logo">CodeDSA</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn">
+        <span style="margin-left: 20px">Snake Cursor</span>
+      </button>
+    </div>
+  </nav>
 
   <!-- Breadcrumb Navigation -->
   <div class="breadcrumb-container">
@@ -67,7 +81,7 @@ for i = 0 to n-1:
             max_len = max(max_len, j-i+1)
 return max_len
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/2stringproblem2approach1.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -90,7 +104,7 @@ for right = 0 to n-1:
     max_len = max(max_len, right-left+1)
 return max_len
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/2stringproblem2approach2.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -112,7 +126,7 @@ for right = 0 to n-1:
     max_len = max(max_len, right-left+1)
 return max_len
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/2stringproblem2approach3.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -128,5 +142,7 @@ return max_len
     <script src="../../index.js"></script>
     <script src="../../JS/problemTracker.js"></script>
     <script src="../../JS/Flowcharts.js"></script>
+  <script src="../../copyToClipboard.js"></script>
+
   </body>
 </html>

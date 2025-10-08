@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
     <link rel="stylesheet" href="../../CSS/snake.css" />
     <link rel="stylesheet" href="../../CSS/Flowchart.css"/>
+            <link rel="stylesheet" href="../../CSS/copyToClipboard.css"/>
+
   </head>
   <body>
     <!-- Navbar -->
@@ -30,18 +32,48 @@
       </div>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <div class="breadcrumb-container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="../String.html">Strings</a></li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Group Anagrams
-          </li>
-        </ol>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Anagrams - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css" />
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css" />
+  <link rel="stylesheet" href="../../CSS/snake.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <div class="logo-img">
+        <img src="../../images/logo.png" alt="Logo">
+      </div>
+      <div class="logo">CodeDSA</div>
     </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn">
+        <span style="margin-left: 20px">Snake Cursor</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../String.html">Strings</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Group Anagrams
+        </li>
+      </ol>
+    </nav>
+  </div>
 
   <main>
     <h1>Group Anagrams</h1>
@@ -60,19 +92,19 @@
         
       </section>
 
-      <!-- Approaches -->
-      <section class="approach-section">
-        <h2>Approach 1: Brute Force</h2>
-        <p>
-          <strong>Explanation:</strong> Compare each string with others by
-          sorting and checking equality.
-        </p>
-        <p>
-          <strong>Time Complexity:</strong> O(n² * k log k) where k = max string
-          length
-        </p>
-        <p><strong>Space Complexity:</strong> O(n * k)</p>
-        <pre class="pseudo-code">
+    <!-- Approaches -->
+    <section class="approach-section">
+      <h2>Approach 1: Brute Force</h2>
+      <p>
+        <strong>Explanation:</strong> Compare each string with others by
+        sorting and checking equality.
+      </p>
+      <p>
+        <strong>Time Complexity:</strong> O(n² * k log k) where k = max string
+        length
+      </p>
+      <p><strong>Space Complexity:</strong> O(n * k)</p>
+      <pre class="pseudo-code">
 groups = []
 for each word in strs:
     check if it matches existing sorted word in groups
@@ -80,7 +112,7 @@ for each word in strs:
     else, create new group
 return groups
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
          <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach1.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -101,7 +133,7 @@ for word in strs:
     map[key].append(word)
 return list(map.values())
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
          <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach2.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -125,7 +157,7 @@ for word in strs:
     map[key].append(word)
 return list(map.values())
       </pre
-        >
+        ><button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
         <div class="fc-container">
     <button class="fc-button">View Flowchart</button>
     <img src="../Flowcharts/4stringapproach1.png" alt="Heap Sort Flowchart" class="fc-image" />
@@ -134,14 +166,10 @@ return list(map.values())
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
-    </footer>
+  <script src="../../index.js"></script>
+  <script src="../../copyToClipboard.js"></script>
+  <script src="../../JS/problemTracker.js"></script
+        <script src="../../JS/Flowcharts.js"></script>
 
-    <script src="../../index.js"></script>
-    <script src="../../JS/problemTracker.js"></script>
-    <script src="../../JS/Flowcharts.js"></script>
-
-  </body>
+</body>
 </html>

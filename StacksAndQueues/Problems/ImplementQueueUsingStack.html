@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Implement Queue using Stacks - CodeDSA</title>
-  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+ <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/copyToClipboard.css">  <link rel="stylesheet" href="../../CSS/copyToClipboard.css">
   <link rel="stylesheet" href="../../CSS/breadcrumb.css">
   <link rel="stylesheet" href="../../CSS/snake.css">
 </head>
@@ -15,19 +16,19 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo-container">
-  <div class="logo-img">
-    <img src="../../images/logo.png" alt="Logo">
-  </div>
-  <div class="logo">CodeDSA</div>
-</div>
+      <div class="logo-img">
+        <img src="../../images/logo.png" alt="Logo">
+      </div>
+      <div class="logo">CodeDSA</div>
+    </div>
     <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="../../about.html">About</a></li>
-      <li><a href="../../contact.html">Contact</a></li>
-    </ul>
-    <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
-    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+      <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+      <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
     </div>
   </nav>
 
@@ -69,6 +70,8 @@ pop(): return stack1.pop()
 peek(): return stack1.top()
 empty(): return stack1 is empty
       </pre>
+            <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
+
     </section>
 
     <section class="approach-section">
@@ -88,6 +91,8 @@ pop():
 peek(): similar to pop but return stack2.top()
 empty(): return stack1 empty and stack2 empty
       </pre>
+            <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
+
     </section>
 
     <section class="approach-section">
@@ -107,6 +112,8 @@ pop():
 peek(): similar, but return last element instead of popping
 empty(): stack1 empty
       </pre>
+            <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy!</button>
+
     </section>
   </main>
 
@@ -114,8 +121,9 @@ empty(): stack1 empty
     <p>&copy; 2025 Mrunalini Pachpute. All rights reserved.</p>
   </footer>
 
-    <script src="../../index.js"></script>
-    <script src="../../JS/problemTracker.js"></script>
+  <script src="../../index.js"></script>
+  <script src="../../copyToClipboard.js"></script>
+  <script src="../../JS/problemTracker.js"></script>
 </body>
 
 </html>
